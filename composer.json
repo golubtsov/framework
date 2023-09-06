@@ -1,0 +1,26 @@
+{
+    "name": "nikita/html",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "framework/",
+            "Framework\\Databse\\Model\\": "framework/Database/Model/",
+            "App\\Models\\": "app/Models/",
+            "App\\Http\\": "app/Http/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nikita",
+            "email": "nproger781@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "symfony/dotenv": "*",
+        "ext-mysqli": ">=7",
+        "ext-pdo": ">=7",
+        "larapack/dd": "^1.1"
+    }
+}
