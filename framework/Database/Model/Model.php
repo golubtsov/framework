@@ -18,6 +18,11 @@ abstract class Model implements ModelInterface
         $this->pdo = new PDO($_ENV['DB_CONNECTION'] . ':' . 'host=' . $_ENV['DB_HOST'] . ';' . 'dbname=' . $_ENV['DB_DATABASE'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
     }
 
+    public static function createModel(): static
+    {
+        return new static();
+    }
+
     private function select(): string
     {
         return "SELECT * FROM $this->table";
@@ -76,7 +81,7 @@ abstract class Model implements ModelInterface
         return $res;
     }
 
-    protected function changeTableName(string $table): static
+    private function changeTableName(string $table): static
     {
         $this->table = $table;
 

@@ -5,6 +5,8 @@
     "autoload": {
         "psr-4": {
             "Framework\\": "framework/",
+            "Framework\\Http\\": "framework/Http/",
+            "Framework\\Http\\Exceptions\\Request\\": "framework/Http/Exceptions/Request/",
             "Framework\\Databse\\Model\\": "framework/Database/Model/",
             "App\\Models\\": "app/Models/",
             "App\\Http\\": "app/Http/"
