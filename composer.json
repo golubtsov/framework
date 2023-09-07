@@ -6,7 +6,7 @@
         "psr-4": {
             "Framework\\": "framework/",
             "Framework\\Http\\": "framework/Http/",
-            "Framework\\Response\\": "framework/Response/",
+            "Framework\\Routing\\": "framework/Routing/",
             "Framework\\Http\\Exceptions\\Request\\": "framework/Http/Exceptions/Request/",
             "Framework\\Databse\\Model\\": "framework/Database/Model/",
             "App\\Models\\": "app/Models/",
@@ -22,7 +22,6 @@
     "require": {
         "php": ">=7.4",
         "symfony/dotenv": "*",
-        "ext-mysqli": ">=7",
         "ext-pdo": ">=7",
         "larapack/dd": "^1.1"
     }

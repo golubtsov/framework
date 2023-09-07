@@ -3,10 +3,11 @@
 namespace Framework\Http;
 
 use Exception;
-use Framework\Http\Exceptions\Request\UndefinedKeyRequest;
+use Framework\Http\Exceptions\Request\UndefinedKeyRequestException;
 
 class Request
 {
+    private static string $HEADER_JSON = 'application/json';
     /**
      * @param array $params
      * @param array $postData
@@ -24,10 +25,6 @@ class Request
     )
     {}
 
-    /**
-     * @return static
-     */
-
     public static function createFromGlobals(): static
     {
         return new static($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER);
@@ -35,10 +32,9 @@ class Request
 
     /**
      * @param string|array $keys
-     * @return string|array
-     * @throws UndefinedKeyRequest
+     * @return string|array|UndefinedKeyRequestException
      */
-    public function getParams(string|array $keys): string|array
+    public function getParams(string|array $keys): string|array|UndefinedKeyRequestException
     {
         /** @var array $res */
 
@@ -46,7 +42,7 @@ class Request
             foreach ($keys as $item) {
 
                 if (is_null($this->params[$item])) {
-                    throw new UndefinedKeyRequest("Undefined array key \"$item\".");
+                    return new UndefinedKeyRequestException("Undefined array key \"$item\".");
                 } else {
                     $res[$item] = $this->params[$item];
                 }
@@ -92,5 +88,15 @@ class Request
     public function getFile(string $key)
     {
         return $this->files[$key];
+    }
+
+    public function getHeaders(string $key): string|array
+    {
+        return empty($key) ? $this->server : $this->server[$key];
+    }
+
+    public function isJson(): bool
+    {
+        return $this->server['HTTP_ACCEPT'] == self::$HEADER_JSON;
     }
 }
