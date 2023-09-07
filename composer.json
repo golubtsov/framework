@@ -7,8 +7,7 @@
             "Framework\\": "framework/",
             "Framework\\Http\\": "framework/Http/",
             "Framework\\Routing\\": "framework/Routing/",
-            "Framework\\Http\\Exceptions\\Request\\": "framework/Http/Exceptions/Request/",
-            "Framework\\Databse\\Model\\": "framework/Database/Model/",
+            "Framework\\Databse\\": "framework/Database/",
             "App\\Models\\": "app/Models/",
             "App\\Http\\": "app/Http/"
         }
@@ -23,6 +22,7 @@
         "php": ">=7.4",
         "symfony/dotenv": "*",
         "ext-pdo": ">=7",
-        "larapack/dd": "^1.1"
+        "larapack/dd": "^1.1",
+        "twig/twig": "^3.0"
     }
 }

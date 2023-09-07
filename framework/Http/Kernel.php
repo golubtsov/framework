@@ -6,8 +6,10 @@ use Framework\Routing\Router;
 
 class Kernel
 {
-    public function handle(Request $request): void
+    public function handle(): void
     {
+        $request = Request::createFromGlobals();
+
         Router::execute($request);
     }
 }

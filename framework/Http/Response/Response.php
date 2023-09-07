@@ -9,28 +9,33 @@ class Response
         return new static();
     }
 
-    public static function view(string $file): string
+    //TODO change path for $file
+    public static function view(string $file): void
     {
-        $data = file_get_contents($_ENV['BASE_PATH'] . $file);
+        $data = file_get_contents($_ENV['BASE_PATH'] . 'resources/views/' . $file);
 
-        return !$data ? self::notFound() : $data;
+        if (!$data) {
+            self::notFound();
+        } else {
+            echo $data;
+        }
     }
 
-    public static function json(array $data = [], int $code = 200): string
+    public static function json(array $data = [], int $code = 200): void
     {
         header('Content-type: application/json; charset=utf-8', true, $code);
 
-        return json_encode($data);
+        echo json_encode($data);
     }
 
-    public static function notFound(): string
+    public static function notFound(): void
     {
-        return file_get_contents(__DIR__ . '/views/404.blade.php');
+        echo file_get_contents(__DIR__ . '/views/404.blade.php');
     }
 
-    public static function notFoundJson(): string
+    public static function notFoundJson(): void
     {
-        return self::json([
+        self::json([
             'message' => 'Not found.'
         ], 404);
     }

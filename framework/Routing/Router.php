@@ -44,10 +44,12 @@ class Router
             $pattern = '/^' . str_replace('/', '\/', $route) . '$/';
 
             if (preg_match($pattern, $request->getUrl())) {
-                (new $handler[0]())->{$handler[1]}();
-            } else {
-                echo $request->isJson() ? Response::notFoundJson() : Response::notFound();
+                echo (new $handler[0]())->{$handler[1]}($request, );
+                return;
             }
         }
+
+        $request->isJson() ? Response::notFoundJson() : Response::notFound();
+        exit();
     }
 }

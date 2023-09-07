@@ -8,6 +8,7 @@ use Framework\Http\Exceptions\Request\UndefinedKeyRequestException;
 class Request
 {
     private static string $HEADER_JSON = 'application/json';
+
     /**
      * @param array $params
      * @param array $postData

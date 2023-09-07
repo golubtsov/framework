@@ -1,6 +1,7 @@
 <?php
 
 use Framework\Routing\Router;
-use Framework\Http\Controller\Controller;
+use App\Http\Controllers\PostController;
 
-Router::put('/blog/update/(\d+)', Controller::class, 'index');
+Router::get('/', PostController::class, 'index');
+Router::get('/posts/(\d+)/update', PostController::class, 'update');
