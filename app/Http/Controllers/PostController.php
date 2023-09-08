@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index(): string
     {
-        return View::render('welcome.twig');
+        return View::render('welcome', ['name' => 'Nikita']);
     }
 
     public function update()

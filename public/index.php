@@ -10,7 +10,6 @@ use Symfony\Component\Dotenv\Dotenv;
 $env = new Dotenv();
 $env->load('../.env');
 
-
 $kernel = new Kernel();
 $kernel->handle();
 

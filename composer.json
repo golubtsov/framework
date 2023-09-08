@@ -1,15 +1,11 @@
 {
-    "name": "nikita/html",
+    "name": "nigo/framework",
     "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
             "Framework\\": "framework/",
-            "Framework\\Http\\": "framework/Http/",
-            "Framework\\Routing\\": "framework/Routing/",
-            "Framework\\Databse\\": "framework/Database/",
-            "App\\Models\\": "app/Models/",
-            "App\\Http\\": "app/Http/"
+            "App\\": "app/"
         }
     },
     "authors": [
@@ -23,6 +19,7 @@
         "symfony/dotenv": "*",
         "ext-pdo": ">=7",
         "larapack/dd": "^1.1",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "jenssegers/blade": "^1.4"
     }
 }

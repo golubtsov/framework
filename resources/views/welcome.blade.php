@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1 id="text">Welcome World!</h1>
+<h1>Welcome World, {{$name}}</h1>
 
 </body>
 </html>
