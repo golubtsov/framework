@@ -19,7 +19,6 @@
         "symfony/dotenv": "*",
         "ext-pdo": ">=7",
         "larapack/dd": "^1.1",
-        "twig/twig": "^3.0",
         "jenssegers/blade": "^1.4"
     }
 }

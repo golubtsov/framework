@@ -21,16 +21,16 @@ class Response
         }
     }
 
-    public static function json(array $data = [], int $code = 200): void
+    public static function json(array $data = [], int $code = 200): bool|string
     {
         header('Content-type: application/json; charset=utf-8', true, $code);
 
-        echo json_encode($data);
+        return json_encode($data);
     }
 
-    public static function notFound(): void
+    public static function notFound(): bool|string
     {
-        echo file_get_contents(__DIR__ . '/views/404.blade.php');
+        return file_get_contents(__DIR__ . '/views/404.blade.php');
     }
 
     public static function notFoundJson(): void
