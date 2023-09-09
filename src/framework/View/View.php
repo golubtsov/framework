@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework\View;
+namespace src\framework\View;
 
 use Jenssegers\Blade\Blade;
 

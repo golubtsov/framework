@@ -1,11 +1,10 @@
 {
     "name": "nigo/framework",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Framework\\": "framework/",
-            "Framework\\Databse\\": "framework/Database"
+            "Nigo\\Framework\\": "src/"
         }
     },
     "authors": [
@@ -14,11 +13,5 @@
             "email": "nproger781@gmail.com"
         }
     ],
-    "require": {
-        "php": ">=7.4",
-        "symfony/dotenv": "*",
-        "ext-pdo": ">=7",
-        "larapack/dd": "^1.1",
-        "jenssegers/blade": "^1.4"
-    }
+    "require": {}
 }

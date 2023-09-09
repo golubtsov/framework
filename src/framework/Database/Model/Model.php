@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework\Databse\Model;
+namespace src\framework\Database\Model;
 
 use PDO;
 use stdClass;

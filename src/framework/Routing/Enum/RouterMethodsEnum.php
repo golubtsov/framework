@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework\Routing\Enum;
+namespace src\framework\Routing\Enum;
 
 class RouterMethodsEnum
 {

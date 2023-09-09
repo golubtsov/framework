@@ -1,10 +1,10 @@
 <?php
 
-namespace Framework\Routing;
+namespace src\framework\Routing;
 
-use Framework\Http\Request;
-use Framework\Http\Response\Response;
-use Framework\Routing\Enum\RouterMethodsEnum;
+use src\framework\Http\Request;
+use src\framework\Http\Response\Response;
+use src\framework\Routing\Enum\RouterMethodsEnum;
 
 class Router
 {

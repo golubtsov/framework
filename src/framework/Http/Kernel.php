@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework\Http;
+namespace src\framework\Http;
 
-use Framework\Routing\Router;
+use src\framework\Routing\Router;
 
 class Kernel
 {

@@ -1,9 +1,8 @@
 <?php
 
-namespace Framework\Http;
+namespace src\framework\Http;
 
-use Exception;
-use Framework\Http\Exceptions\Request\UndefinedKeyRequestException;
+use src\framework\Http\Exceptions\Request\UndefinedKeyRequestException;
 
 class Request
 {
