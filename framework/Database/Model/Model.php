@@ -32,7 +32,13 @@ abstract class Model implements ModelInterface
     {
         /** @var array $res */
 
-        foreach ($this->pdo->query("{$this->select()};")->fetchAll() as $item) {
+        $response = $this->pdo->query("{$this->select()};")->fetchAll();
+
+        if (count($response) == 0) {
+            return [];
+        }
+
+        foreach ($response as $item) {
             $res[] = json_decode(json_encode($item), false);
         }
 

@@ -1,8 +1,6 @@
 /vendor
 /.env
 /.idea
-/docker
-/docker-compose.yml
 /node_modules
 /public/cache
 /public/css/output.css
