@@ -10,7 +10,9 @@
 </head>
 <body>
 
-<h1 class="text-blue-500">Welcome World</h1>
+<div class="w-full text-gray-700 flex bg-gray-800 h-screen justify-center items-center">
+    <h1 class="text-center text-white text-4xl">Framework work!</h1>
+</div>
 
 </body>
 </html>

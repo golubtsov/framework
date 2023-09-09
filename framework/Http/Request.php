@@ -35,9 +35,13 @@ class Request
      * @param string|array $keys
      * @return string|array|UndefinedKeyRequestException
      */
-    public function getParams(string|array $keys): string|array|UndefinedKeyRequestException
+    public function getParams(string|array $keys = ''): string|array|UndefinedKeyRequestException|null
     {
         /** @var array $res */
+
+        if ($keys == '') {
+            return $this->params;
+        }
 
         if (is_array($keys)) {
             foreach ($keys as $item) {
@@ -52,6 +56,11 @@ class Request
             return $res;
 
         } else {
+
+            if (is_null($this->params[$keys])) {
+                return new UndefinedKeyRequestException("Undefined array key \"$keys\".");
+            }
+
             return $this->params[$keys];
         }
     }
