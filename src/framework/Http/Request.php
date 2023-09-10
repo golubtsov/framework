@@ -32,7 +32,7 @@ class Request
 
     /**
      * @param string|array $keys
-     * @return string|array|UndefinedKeyRequestException
+     * @return string|array|UndefinedKeyRequestException|null
      */
     public function getParams(string|array $keys = ''): string|array|UndefinedKeyRequestException|null
     {

@@ -13,5 +13,11 @@
             "email": "nproger781@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=8.0",
+        "symfony/dotenv": "*",
+        "ext-pdo": ">=7",
+        "larapack/dd": "^1.1",
+        "jenssegers/blade": "^1.4"
+    }
 }

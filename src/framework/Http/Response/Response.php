@@ -9,7 +9,7 @@ class Response
         return new static();
     }
 
-    //TODO change path for $file
+    //TODO resources/views/
     public static function view(string $file): void
     {
         $data = file_get_contents($_ENV['BASE_PATH'] . 'resources/views/' . $file);
