@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.0",
         "symfony/dotenv": "*",
         "ext-pdo": ">=7",
         "larapack/dd": "^1.1",
