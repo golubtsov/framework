@@ -5,7 +5,6 @@
     "autoload": {
         "psr-4": {
             "Framework\\": "framework/",
-            "Framework\\Databse\\": "framework/Database",
             "App\\": "app/"
         }
     },

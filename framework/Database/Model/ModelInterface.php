@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework\Databse\Model;
+namespace Framework\Database\Model;
 
 use stdClass;
 

@@ -8,7 +8,7 @@ use Framework\View\View;
 
 class MainController extends Controller
 {
-    public function index(Request $request): bool|string
+    public function index(Request $request): string
     {
         return View::render('app');
     }

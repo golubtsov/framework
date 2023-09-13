@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework\Databse\Model;
+namespace Framework\Database\Model;
 
 use PDO;
 use stdClass;
@@ -87,6 +87,13 @@ abstract class Model implements ModelInterface
         return $res;
     }
 
+    public function first(): stdClass|null
+    {
+        $obj = $this->pdo->query("{$this->select()} $this->query;")->fetchObject();
+
+        return !$obj ? null : $obj;
+    }
+
     private function changeTableName(string $table): static
     {
         $this->table = $table;
@@ -105,5 +112,38 @@ abstract class Model implements ModelInterface
     public function hasMany(string $related, string $field, string|int $value): array
     {
         return $this->changeTableName($related)->where($field, $value)->get();
+    }
+
+    public function create(array $data): bool
+    {
+        $res = $this->pdo->query("INSERT INTO $this->table {$this->setKeys(array_keys($data))} VALUES {$this->setValues(array_values($data))};");
+
+        return !$res ? $res : true;
+    }
+
+    private function setKeys(array $keys): string
+    {
+        $response = '(';
+
+        for ($i = 0; $i < count($keys); $i++) {
+            $response .= ($i == count($keys) - 1) ? $keys[$i] : $keys[$i] . ',';
+        }
+
+        $response .= ')';
+
+        return $response;
+    }
+
+    private function setValues(array $values): string
+    {
+        $response = '(';
+
+        for ($i = 0; $i < count($values); $i++) {
+            $response .= ($i == count($values) - 1) ? '\'' . $values[$i] . '\'' : '\'' . $values[$i] . '\'' . ',';
+        }
+
+        $response .= ')';
+
+        return $response;
     }
 }
