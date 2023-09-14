@@ -5,7 +5,7 @@ namespace Framework\Http;
 use Exception;
 use Framework\Http\Exceptions\Request\UndefinedKeyRequestException;
 
-class Request
+class Request implements RequestInterface
 {
     private static string $HEADER_JSON = 'application/json';
 
@@ -33,7 +33,7 @@ class Request
 
     /**
      * @param string|array $keys
-     * @return string|array|UndefinedKeyRequestException
+     * @return string|array|UndefinedKeyRequestException|null
      */
     public function getParams(string|array $keys = ''): string|array|UndefinedKeyRequestException|null
     {

@@ -2,17 +2,14 @@
 
 namespace Framework\Http\Response;
 
+use JetBrains\PhpStorm\NoReturn;
+
 class Response
 {
-    public static function createObj(): static
-    {
-        return new static();
-    }
-
     //TODO change path for $file
     public static function view(string $file): void
     {
-        $data = file_get_contents($_ENV['BASE_PATH'] . 'resources/views/' . $file);
+        $data = file_get_contents($_ENV['BASE_PATH'] . 'public/views/' . $file);
 
         if (!$data) {
             self::notFound();
@@ -38,5 +35,11 @@ class Response
         self::json([
             'message' => 'Not found.'
         ], 404);
+    }
+
+    #[NoReturn] public static function redirect(string $url): void
+    {
+        header('Location: ' . $url);
+        die();
     }
 }

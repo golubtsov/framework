@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework\Auth;
+namespace Framework\Helpers;
 
 use App\Models\User;
 use stdClass;
