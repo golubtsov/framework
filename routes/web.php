@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SignupController;
 
 Router::get('/', LoginController::class, 'index');
+Router::post('/login', LoginController::class, 'login');
 Router::get('/signup', SignupController::class, 'index');
 Router::post('/signup', SignupController::class, 'signup');
 

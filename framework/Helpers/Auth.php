@@ -27,9 +27,9 @@ class Auth
         $_SESSION['user'] = $user;
     }
 
-    public static function user(): bool|stdClass
+    public static function user(): null|stdClass
     {
-        return self::check() ? false : $_SESSION['user'];
+        return self::check() ? $_SESSION['user'] : null;
     }
 
     public static function id(): bool|int

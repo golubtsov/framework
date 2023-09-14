@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Services\SignupService;
+use App\Services\Auth\SignupService;
 use Framework\Http\Controller\Controller;
 use Framework\Http\Request;
 use Framework\View\View;
