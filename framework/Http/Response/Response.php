@@ -37,7 +37,7 @@ class Response
         ], 404);
     }
 
-    #[NoReturn] public static function redirect(string $url): void
+    public static function redirect(string $url)
     {
         header('Location: ' . $url);
         die();

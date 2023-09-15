@@ -23,7 +23,7 @@ class LoginService
         'notFound' => 'Пользователь с таким Email не найден',
     ];
 
-    public static function login(Request $request)
+    public static function login(Request $request): ?bool
     {
         foreach (self::$fields as $field) {
             if (empty($request->getFormData($field))) {

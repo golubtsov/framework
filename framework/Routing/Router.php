@@ -44,7 +44,7 @@ class Router
             $pattern = '/^' . str_replace('/', '\/', $route) . '$/';
 
             if (preg_match($pattern, $request->getUrl())) {
-                echo (new $handler[0]())->{$handler[1]}($request);
+                echo (new $handler[0]($request))->{$handler[1]}($request);
                 return;
             }
         }

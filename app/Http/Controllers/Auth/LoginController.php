@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Services\Auth\LoginService;
 use Framework\Helpers\Auth;
+use Framework\Helpers\Session;
 use Framework\Http\Controller\Controller;
 use Framework\Http\Request;
+use Framework\Http\Response\Response;
 use Framework\View\View;
 
 class LoginController extends Controller
@@ -15,12 +17,19 @@ class LoginController extends Controller
         return View::render('auth.login');
     }
 
-    public function login(Request $request)
+    public function login(Request $request): void
     {
         if (LoginService::login($request)) {
-            dd(Auth::user());
+            Response::redirect('/');
+        } else {
+            Session::put('errors', ['Что-то пошло не так']);
+            Response::redirect('/login');
         }
+    }
 
-        dd(false);
+    public function logout(): void
+    {
+        Auth::logout();
+        Response::redirect('/login');
     }
 }

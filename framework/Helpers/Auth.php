@@ -39,7 +39,7 @@ class Auth
 
     public static function check(): bool
     {
-        return !is_null($_SESSION['user']);
+        return !is_null($_SESSION['user'] ?? null);
     }
 
     public static function hash(string $password): string
