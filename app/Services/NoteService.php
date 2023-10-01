@@ -12,8 +12,19 @@ class NoteService
         return (new Note())->where('user_id', Auth::user()->id)->get();
     }
 
-    public static function getNote(int $id)
+    public static function getNote(int $id): ?\stdClass
     {
         return (new Note())->find($id);
+    }
+
+    public static function create(array $data): bool
+    {
+        $note = new Note();
+
+        return $note->create([
+            'user_id' => Auth::id(),
+            'title' => $data['title'],
+            'text' => $data['text']
+        ]);
     }
 }

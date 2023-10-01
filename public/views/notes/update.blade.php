@@ -15,8 +15,8 @@
                 @endforeach
             </div>
             @php \Framework\Helpers\Session::remove('errors') @endphp
-
         @else
+
             <div class="mt-8 w-full">
                 <form action="/notes/store" class="max-w-md m-auto border-white border rounded p-5">
                     <div class="mb-5">

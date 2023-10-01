@@ -34,7 +34,7 @@ class Auth
 
     public static function id(): bool|int
     {
-        return self::check() ? false : $_SESSION['user']->id;
+        return self::check() ? $_SESSION['user']->id : false;
     }
 
     public static function check(): bool

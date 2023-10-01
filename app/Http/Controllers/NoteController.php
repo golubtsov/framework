@@ -31,9 +31,11 @@ class NoteController extends Controller
         return View::render('notes.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request): void
     {
-        dd($request->getFormDataAll());
+        NoteService::create($request->getFormDataAll())
+            ? Response::redirect('/')
+            : dd(500);
     }
 
     public function edit(Request $request): string
