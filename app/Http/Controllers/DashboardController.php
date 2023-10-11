@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\DashboardService;
 use App\Models\User;
+use App\Services\DashboardService;
 use Framework\Helpers\Auth;
 use Framework\Helpers\Session;
 use Framework\Http\Controller\Controller;
 use Framework\Http\Request;
 use Framework\Http\Response\Response;
 use Framework\View\View;
-use const http\Client\Curl\AUTH_ANY;
 
 class DashboardController extends Controller
 {

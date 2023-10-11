@@ -56,7 +56,7 @@ abstract class Model implements ModelInterface
     {
         $this->query == '' ? $this->query .= "WHERE $filed $operator " : $this->query .= " AND $filed $operator ";
 
-        $this->query .= is_int($value) ? $value : "\"$value\"";
+        $this->query .= is_int($value) ? $value : '\'' . $value . '\'';
 
         return $this;
     }
@@ -121,6 +121,21 @@ abstract class Model implements ModelInterface
         return !$res ? $res : true;
     }
 
+    public function update(int $id, array $data): bool
+    {
+        $values = '';
+        $index = 0;
+
+        foreach ($data as $key => $value) {
+            $values .= $index != count($data) - 1 ? "$key = '$value', " : "$key = '$value'";
+            $index++;
+        }
+
+        $res = $this->pdo->query("UPDATE $this->table SET $values WHERE id = {$id};");
+
+        return !$res ? $res : true;
+    }
+
     private function setKeys(array $keys): string
     {
         $response = '(';
@@ -145,5 +160,12 @@ abstract class Model implements ModelInterface
         $response .= ')';
 
         return $response;
+    }
+
+    public function delete(int $id): bool
+    {
+        $res = $this->pdo->query("DELETE FROM {$this->table} WHERE id = " . $id);
+
+        return (bool)$res;
     }
 }

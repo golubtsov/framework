@@ -6,6 +6,10 @@ class Session
 {
     public static function get(string $key): mixed
     {
+        if (empty($_SESSION[$key])) {
+            return null;
+        }
+
         return $_SESSION[$key];
     }
 
@@ -22,5 +26,10 @@ class Session
     public static function have(string $key): bool
     {
         return !empty($_SESSION[$key]);
+    }
+
+    public static function clear(): void
+    {
+        $_SESSION = [];
     }
 }

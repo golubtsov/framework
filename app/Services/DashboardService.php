@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Services;
 
 use App\Models\User;
 use Framework\Helpers\Auth;
