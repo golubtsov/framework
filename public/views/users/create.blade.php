@@ -20,7 +20,7 @@
                 </div>
                 @php \Framework\Helpers\Session::remove('errors') @endphp
             @endif
-            <form action="/users/store" method="post" class="max-w-md m-auto border-white border rounded p-5">
+            <form action="/users/store" method="post" class="max-w-md text-white m-auto border-white border rounded p-5">
                 <div class="mb-5">
                     <input type="text" name="name" placeholder="Имя" required class="w-full py-1 px-2 rounded bg-gray-500">
                 </div>

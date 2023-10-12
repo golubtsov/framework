@@ -4,6 +4,8 @@ create table users
     name varchar(255) not null,
     email varchar(255) not null unique,
     password varchar(255) not null,
+    avatar varchar(255) default null,
+    status varchar(255) default 'Новый пользователь',
     updated_at timestamp default CURRENT_TIMESTAMP,
     created_at timestamp default CURRENT_TIMESTAMP
 );

@@ -12,7 +12,7 @@
     <ul class="flex content-end absolute right-0 text-right bottom-1">
         <li class="mr-5">
             <p>
-                <a class="hover:text-gray-400" href="/dashboard">{{\Framework\Helpers\Auth::user()->name}}</a>
+                <a class="hover:text-gray-400" href="/users/{{\Framework\Helpers\Auth::user()->id}}/edit">{{\Framework\Helpers\Auth::user()->name}}</a>
             </p>
         </li>
         <li>

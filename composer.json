@@ -19,6 +19,7 @@
         "symfony/dotenv": "*",
         "ext-pdo": ">=7",
         "larapack/dd": "^1.1",
-        "jenssegers/blade": "^1.4"
+        "jenssegers/blade": "^1.4",
+        "nesbot/carbon": "^2.71"
     }
 }

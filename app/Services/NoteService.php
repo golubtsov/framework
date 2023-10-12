@@ -9,7 +9,8 @@ class NoteService
 {
     public static function getNotes(): array
     {
-        return (new Note())->where('user_id', Auth::user()->id)->get();
+//        return (new Note())->where('user_id', Auth::user()->id)->get();
+        return [];
     }
 
     public static function getNote(int $id): ?\stdClass

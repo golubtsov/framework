@@ -20,12 +20,30 @@
                 </div>
                 @php \Framework\Helpers\Session::remove('errors') @endphp
             @endif
-            <form action="/users/{{$user->id}}/update" method="post" class="max-w-md m-auto border-white border rounded p-5">
+            <form action="/users/{{$user->id}}/update" method="post" enctype="multipart/form-data"
+                  class="max-w-md text-white m-auto border-white border rounded p-5">
                 <div class="mb-5">
-                    <input type="text" value="{{$user->name}}" name="name" placeholder="Имя" required class="w-full py-1 px-2 rounded bg-gray-500">
+                    <input type="text" value="{{$user->name}}" name="name" placeholder="Имя" required
+                           class="w-full py-1 px-2 rounded bg-gray-500">
                 </div>
                 <div class="mb-5">
-                    <input type="email" value="{{$user->email}}" name="email" placeholder="Email" required class="w-full py-1 px-2 rounded bg-gray-500">
+                    <input type="email" value="{{$user->email}}" name="email" placeholder="Email" required
+                           class="w-full py-1 px-2 rounded bg-gray-500">
+                </div>
+                <div class="mb-5">
+                    <select type="text" name="status" required class="w-full py-1 px-2 rounded bg-gray-500">
+                        @if($user->status)
+                            <option selected value={{$user->status}}>{{$user->status}}</option>
+                        @endif
+                        <option value="Дизайнер">Дизайнер</option>
+                        <option value="Разработчик">Разработчик</option>
+                        <option value="Менеджер">Менеджер</option>
+                    </select>
+                </div>
+                <div class="mb-5">
+                    <label class="block mb-2 text-sm font-medium" for="avatar">Фотография</label>
+                    <input class="block w-full text-sm rounded-lg py-1 px-2 cursor-pointer bg-gray-500 focus:outline-none"
+                           id="avatar" type="file" name="avatar">
                 </div>
                 <div class="">
                     <button class="bg-blue-600 text-white m-auto flex py-1 px-12 rounded">Обновить</button>

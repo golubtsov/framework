@@ -3,4 +3,5 @@
 /.idea
 /node_modules
 /public/cache
+/public/storage
 /public/css/output.css

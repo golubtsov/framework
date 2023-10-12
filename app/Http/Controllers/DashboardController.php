@@ -26,7 +26,7 @@ class DashboardController extends Controller
 
     public function index(): string
     {
-        return View::render('dashboard.index');
+        return View::render('users.update');
     }
 
     public function update(): void
