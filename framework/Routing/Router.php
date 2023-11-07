@@ -49,7 +49,7 @@ class Router
             }
         }
 
-        $request->isJson() ? Response::notFoundJson() : Response::notFound();
+        echo $request->isJson() ? Response::notFoundJson() : Response::notFound();
         exit();
     }
 }

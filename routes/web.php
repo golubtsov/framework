@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\AdminController;
 
 Router::get('/', NoteController::class, 'index');
 
@@ -18,6 +19,10 @@ Router::get('/notes/(\d+)/delete', NoteController::class, 'delete');
 Router::get('/login', LoginController::class, 'index');
 Router::get('/logout', LoginController::class, 'logout');
 Router::post('/login', LoginController::class, 'login');
+
+/** ================== */
+Router::get('/admin/login', AdminController::class, 'index');
+Router::get('/user-info/1', AdminController::class, 'userInfo');
 
 Router::get('/signup', SignupController::class, 'index');
 Router::post('/signup', SignupController::class, 'signup');
